@@ -109,9 +109,17 @@ Summary: 2 VULN | 0 LIKELY_VULN | 0 CHECK
 
 ## Related CVEs
 
-This scanner helps detect vulnerabilities similar to:
-- CVE-2022-XXXX (vulnerable kernel drivers)
-- CVE-2023-XXXX (missing input validation)
+This scanner detects vulnerabilities similar to these real-world CVEs:
+
+| CVE | Driver | Description |
+|-----|--------|-------------|
+| CVE-2024-36055 | Hw64.sys (Marvin Test) | Arbitrary physical memory mapping |
+| CVE-2024-34332 | SANDRA | MmMapIoSpace without validation |
+| CVE-2024-26507 | AIDA64 | Arbitrary physical memory read/write |
+| CVE-2024-41498 | IOMap64.sys | Physical memory read/write primitive |
+| CVE-2020-15368 | Win32k.sys | MmMapIoSpace exploitation |
+
+These CVEs all share the same root cause: **no validation on physical address passed to MmMapIoSpace**.
 
 ## License
 
