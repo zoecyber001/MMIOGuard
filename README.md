@@ -51,7 +51,7 @@ MMIOGuard scans kernel driver source code for vulnerable `MmMapIoSpace` patterns
 
 ```c
 // DETECTED: No validation
-NTSTATUS Read物理Addr(PVOID addr) {
+NTSTATUS MmioReadAddress(PVOID addr) {
     map = MmMapIoSpace(addr, 4, 0);  // VULN: addr not validated
 }
 
